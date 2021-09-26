@@ -5,15 +5,40 @@ Created on Thu Sep 23 16:26:52 2021
 @author: mikexia
 """
 
-# git上传 
+
+
+# git上传(先确定PYTHON PATH)
 !git remote rm origin
 
+#把这个文件夹变成Git可管理的仓库。
 !git init
-!git remote add origin https://github.com/kason0611/pytorch.git
+
+#把该目录下的所有文件添加到仓库
 !git add "pytorch_learning.py"
 !git add "model.py"
-!git config --global user.name "kason0611"
-!git config --global user.email kason0611@gmail.com
+
+#把项目提交到仓库。
+!git commit -m 'upload' 
+
+#(将本地仓库与GitHub上创建好的目标远程仓库进行关联。 …后面加的是GitHub目标仓库地址)。
+!git remote add origin https://github.com/kason0611/pytorch.git
+
+#把本地库的所有内容推送到GitHub远程仓库上。
+!git push -u origin master
+
+
+
+
+
+!git pull origin master --allow-unrelated-histories
+#!git config --global user.name "kason0611"
+#!git config --global user.email kason0611@gmail.com
+
+
+
+
+
+
 !git push -u origin master
 
 
